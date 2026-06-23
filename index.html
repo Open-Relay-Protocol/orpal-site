@@ -23,6 +23,44 @@
   @keyframes orpMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
   @keyframes orpEq{0%,100%{height:18%;}50%{height:92%;}}
   @keyframes orpBlink{0%,49%{opacity:1;}50%,100%{opacity:0.15;}}
+  html{-webkit-text-size-adjust:100%;}
+
+  /* ░░░░░ RESPONSIVE — tablet & mobile ░░░░░
+     The page is built with inline styles (desktop defaults), so the overrides
+     below use !important to win over those inline declarations. */
+
+  /* ── Tablet & down (≤ 900px) ── */
+  @media (max-width:900px){
+    .orp-hero-grid{grid-template-columns:1fr !important;gap:22px !important;}
+    /* let stacked grid items shrink below the no-wrap LCD strip's intrinsic width */
+    .orp-hero-grid>div{min-width:0 !important;}
+    .orp-hero-pad{padding:24px 22px 26px !important;}
+    .orp-wordmark{font-size:40px !important;}
+    .orp-grid-3{grid-template-columns:repeat(2,1fr) !important;}
+    .orp-platforms{grid-template-columns:1fr !important;}
+    .orp-identity{position:static !important;width:auto !important;max-width:300px !important;margin:18px auto 0 !important;right:auto !important;bottom:auto !important;transform:none !important;}
+    .orp-mockup-section{margin-bottom:0 !important;}
+    .orp-how{margin-top:34px !important;}
+  }
+
+  /* ── Phone (≤ 600px) ── */
+  @media (max-width:600px){
+    .orp-header-bar{padding:7px 12px !important;gap:8px !important;}
+    .orp-navlinks{display:none !important;}
+    .orp-main{padding:22px 13px 60px !important;}
+    .orp-hero-pad{padding:20px 16px 22px !important;}
+    .orp-hero-title{font-size:24px !important;}
+    .orp-wordmark{font-size:30px !important;}
+    .orp-grid-3{grid-template-columns:1fr !important;}
+    .orp-skins-grid{grid-template-columns:repeat(2,1fr) !important;}
+    .orp-app-body{flex-direction:column !important;}
+    .orp-app-sidebar{width:100% !important;}
+    .orp-diagram-row{flex-wrap:wrap !important;}
+    .orp-cta-body{flex-direction:column !important;text-align:center !important;}
+    .orp-cta-actions{flex-wrap:wrap !important;justify-content:center !important;}
+    .orp-statusbar{flex-wrap:wrap !important;}
+    h1{text-wrap:balance;}
+  }
 </style>
 </helmet>
 
@@ -92,22 +130,22 @@
 
   <!-- ░░░░░ TOP HEADER (steel-blue) ░░░░░ -->
   <header style="position:sticky;top:0;z-index:60;background:linear-gradient(180deg,#6ea8e0,#2c66ad);box-shadow:0 2px 0 rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.5);border-bottom:1px solid #18365c;">
-    <div style="max-width:1120px;margin:0 auto;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;gap:14px;">
+    <div class="orp-header-bar" style="max-width:1120px;margin:0 auto;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;gap:14px;">
       <a href="#top" style="display:flex;align-items:center;gap:9px;">
         <svg viewBox="0 0 280 232" role="img" aria-label="Orpal" style="width:27px;height:auto;display:block;filter:drop-shadow(1px 1px 0 rgba(0,0,0,0.3));"><use href="#orpCrab"/></svg>
         <span style="font-family:'Press Start 2P',monospace;font-size:14px;color:#fff;letter-spacing:1px;text-shadow:1px 1px 0 #14365f;">ORPAL</span>
       </a>
       <nav style="display:flex;align-items:center;gap:4px;">
-        <a href="#how" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">How it works</a>
-        <a href="#skins" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Skins</a>
-        <a href="#features" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Features</a>
-        <a href="#security" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Security</a>
+        <a href="#how" class="orp-navlinks" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">How it works</a>
+        <a href="#skins" class="orp-navlinks" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Skins</a>
+        <a href="#features" class="orp-navlinks" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Features</a>
+        <a href="#security" class="orp-navlinks" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Security</a>
         <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="margin-left:8px;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:7px 14px;font-size:12.5px;font-weight:bold;color:#10151b;">Launch the app</a>
       </nav>
     </div>
   </header>
 
-  <main id="top" style="max-width:1120px;margin:0 auto;padding:34px 16px 80px;">
+  <main id="top" class="orp-main" style="max-width:1120px;margin:0 auto;padding:34px 16px 80px;">
 
     <!-- ░░░░░ HERO WINDOW ░░░░░ -->
     <section style="background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
@@ -127,17 +165,17 @@
         <span style="padding:3px 9px;" style-hover="background:#2c66ad;color:#fff;"><u>H</u>elp</span>
       </div>
 
-      <div style="padding:30px 30px 34px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;">
+      <div class="orp-hero-grid orp-hero-pad" style="padding:30px 30px 34px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;">
         <!-- left: mascot + wordmark -->
         <div style="text-align:center;">
           <svg viewBox="0 0 280 232" role="img" aria-label="ORP crab mascot" style="width:100%;max-width:236px;height:auto;display:block;margin:0 auto;"><use href="#orpCrab"/></svg>
-          <div style="font-family:'Press Start 2P',monospace;font-size:46px;color:#163f86;letter-spacing:2px;margin-top:6px;text-shadow:-2px -2px 0 #5b9ae8,3px 3px 0 #0b1f45;">ORPAL</div>
+          <div class="orp-wordmark" style="font-family:'Press Start 2P',monospace;font-size:46px;color:#163f86;letter-spacing:2px;margin-top:6px;text-shadow:-2px -2px 0 #5b9ae8,3px 3px 0 #0b1f45;">ORPAL</div>
           <div style="font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:3px;color:#2f7be6;margin-top:14px;">OPEN RELAY PROTOCOL</div>
         </div>
 
         <!-- right: pitch -->
         <div>
-          <h1 style="margin:0;font-size:32px;line-height:1.12;color:#0f151c;font-weight:bold;text-wrap:balance;">Direct, private,<br>peer-to-peer messaging.</h1>
+          <h1 class="orp-hero-title" style="margin:0;font-size:32px;line-height:1.12;color:#0f151c;font-weight:bold;text-wrap:balance;">Direct, private,<br>peer-to-peer messaging.</h1>
           <p style="font-size:15px;line-height:1.55;color:#26303b;margin:14px 0 0;">Orpal opens an encrypted WebRTC channel <b>directly between two devices</b>. Messages and files travel peer-to-peer — the board just introduces you, then steps aside.</p>
           <!-- tagline plate -->
           <div style="margin:18px 0 0;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:11px 14px;display:flex;align-items:center;gap:10px;">
@@ -164,7 +202,7 @@
     </section>
 
     <!-- ░░░░░ BIG APP MOCKUP ░░░░░ -->
-    <section style="margin-top:40px;position:relative;">
+    <section class="orp-mockup-section" style="margin-top:40px;position:relative;">
       <div style="background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff,0 14px 34px rgba(0,0,0,0.32);padding:3px;">
         <!-- titlebar -->
         <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 5px 4px 8px;display:flex;align-items:center;justify-content:space-between;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">
@@ -199,9 +237,9 @@
           </span>
         </div>
         <!-- body: sidebar + chat -->
-        <div style="display:flex;gap:4px;padding:4px;align-items:stretch;">
+        <div class="orp-app-body" style="display:flex;gap:4px;padding:4px;align-items:stretch;">
           <!-- sidebar contacts -->
-          <div style="width:226px;flex-shrink:0;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:5px;display:flex;flex-direction:column;">
+          <div class="orp-app-sidebar" style="width:226px;flex-shrink:0;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:5px;display:flex;flex-direction:column;">
             <div style="background:linear-gradient(90deg,#3a72b8,#6ea0d6);color:#fff;font-weight:bold;font-size:11px;padding:4px 7px;margin-bottom:5px;">Contacts</div>
             <div style="font-family:'Silkscreen',monospace;font-size:9px;color:#4a525e;padding:3px 5px 2px;letter-spacing:1px;">▾ ONLINE — 3</div>
             <!-- selected -->
@@ -268,7 +306,7 @@
           </div>
         </div>
         <!-- status bar -->
-        <div style="display:flex;gap:3px;padding:2px 4px 4px;font-size:11px;color:#26303b;">
+        <div class="orp-statusbar" style="display:flex;gap:3px;padding:2px 4px 4px;font-size:11px;color:#26303b;">
           <span style="box-shadow:inset 1px 1px #6a7380,inset -1px -1px #fff;padding:3px 8px;display:flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#1f9a4a;"></span>Connected</span>
           <span style="box-shadow:inset 1px 1px #6a7380,inset -1px -1px #fff;padding:3px 8px;">P2P · E2EE</span>
           <span style="flex:1;box-shadow:inset 1px 1px #6a7380,inset -1px -1px #fff;padding:3px 8px;font-family:'VT323',monospace;font-size:13px;">open-relay-protocol.github.io/orpal</span>
@@ -276,7 +314,7 @@
       </div>
 
       <!-- MY IDENTITY window (overlapping) -->
-      <div style="position:absolute;right:-6px;bottom:-40px;width:268px;transform:rotate(1.4deg);background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff,0 18px 36px rgba(0,0,0,0.4);padding:3px;z-index:5;">
+      <div class="orp-identity" style="position:absolute;right:-6px;bottom:-40px;width:268px;transform:rotate(1.4deg);background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff,0 18px 36px rgba(0,0,0,0.4);padding:3px;z-index:5;">
         <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:11.5px;padding:4px 5px 4px 8px;display:flex;align-items:center;justify-content:space-between;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">
           <span>My Identity</span>
           <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">✕</span>
@@ -298,7 +336,7 @@
     </section>
 
     <!-- ░░░░░ BLIND BOARD ░░░░░ -->
-    <section id="how" style="margin-top:78px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+    <section id="how" class="orp-how" style="margin-top:78px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
       <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">📡 How it works — the blind board</div>
       <div style="padding:26px 24px 28px;">
         <h2 style="margin:0 0 6px;font-size:24px;text-align:center;">A relay that introduces you — then steps aside.</h2>
@@ -306,7 +344,7 @@
         <!-- diagram -->
         <div style="background:#dfe4ea;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:24px 18px;">
           <div style="font-family:'VT323',monospace;text-align:center;color:#2c66ad;font-size:15px;letter-spacing:1px;margin-bottom:14px;">DIRECT ENCRYPTED CHANNEL · WEBRTC · E2EE</div>
-          <div style="display:flex;align-items:center;gap:14px;justify-content:center;">
+          <div class="orp-diagram-row" style="display:flex;align-items:center;gap:14px;justify-content:center;">
             <!-- peer A -->
             <div style="text-align:center;width:130px;">
               <div style="margin:0 auto 8px;width:62px;height:56px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;">
@@ -356,7 +394,7 @@
       <div style="padding:24px;">
         <h2 style="margin:0 0 6px;font-size:24px;">Six skins. Same untrusted board underneath.</h2>
         <p style="margin:0 0 22px;font-size:14px;color:#26303b;max-width:640px;line-height:1.55;">Orpal ships with a wardrobe of classic skins. Steel Blue is the default — swap to amber CRT, phosphor green, synthwave magenta and more. Every skin is the exact same secure core.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="orp-skins-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
 
           <!-- Steel Blue (current) -->
           <div>
@@ -426,7 +464,7 @@
     <section id="features" style="margin-top:34px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
       <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">⚙ Features — everything in the core</div>
       <div style="padding:24px;">
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <div class="orp-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
           <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
             <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">⚡</div>
             <b style="font-size:15px;">Direct P2P transport</b>
@@ -481,7 +519,7 @@
       <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">🔐 Security — Properties</div>
       <div style="padding:24px;">
         <h2 style="margin:0 0 18px;font-size:24px;">Designed to be trusted with the relay assumed hostile.</h2>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="orp-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
           <!-- groupbox -->
           <div style="border:1px solid #8a93a0;box-shadow:inset 1px 1px #fff,1px 1px #fff;padding:16px 14px 14px;position:relative;margin-top:8px;">
             <span style="position:absolute;top:-9px;left:10px;background:#c8d0d8;padding:0 6px;font-weight:bold;font-size:12px;">Hardware keys</span>
@@ -508,7 +546,7 @@
     <!-- ░░░░░ PLATFORMS ░░░░░ -->
     <section style="margin-top:34px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
       <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">💿 Setup — choose your install</div>
-      <div style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="orp-platforms" style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;display:flex;flex-direction:column;">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
             <span style="width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:inset 1px 1px #4a525e,inset -1px -1px #fff;display:flex;align-items:center;justify-content:center;"><span style="width:6px;height:6px;border-radius:50%;background:#2c66ad;"></span></span>
@@ -537,14 +575,14 @@
           <span>Orpal</span>
           <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">✕</span>
         </div>
-        <div style="padding:24px;display:flex;gap:18px;align-items:center;">
+        <div class="orp-cta-body" style="padding:24px;display:flex;gap:18px;align-items:center;">
           <div style="flex-shrink:0;"><svg viewBox="0 0 280 232" role="img" aria-label="Orpal crab" style="width:58px;height:auto;display:block;"><use href="#orpCrab"/></svg></div>
           <div style="flex:1;">
             <h2 style="margin:0;font-size:22px;">Ready to crack the crab's back?</h2>
             <p style="margin:8px 0 0;font-size:14px;color:#26303b;line-height:1.5;">No accounts to create, nothing to trust but the math. Open Orpal and scan your first contact.</p>
           </div>
         </div>
-        <div style="display:flex;gap:10px;justify-content:flex-end;padding:0 24px 22px;">
+        <div class="orp-cta-actions" style="display:flex;gap:10px;justify-content:flex-end;padding:0 24px 22px;">
           <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:10px 20px;font-size:14px;font-weight:bold;color:#10151b;"><span style="border:1px dotted #10151b;padding:2px 8px;">▶ Launch the app</span></a>
           <a href="https://github.com/open-relay-protocol/orpal" target="_blank" rel="noopener" style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:10px 20px;font-size:14px;font-weight:bold;color:#10151b;">View on GitHub</a>
         </div>
