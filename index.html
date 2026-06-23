@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:Tahoma,"Segoe UI",Verdana,Geneva,sans-serif;font-size:13px;color:#0f151c;background:#36527d;background-image:linear-gradient(180deg,#557fb6,#2f4a73);background-attachment:fixed;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#2c66ad;color:#fff;}
+  a{text-decoration:none;color:inherit;}
+  @keyframes orpMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes orpEq{0%,100%{height:18%;}50%{height:92%;}}
+  @keyframes orpBlink{0%,49%{opacity:1;}50%,100%{opacity:0.15;}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:5px 5px;">
+
+  <!-- ░░░░░ TOP HEADER (steel-blue) ░░░░░ -->
+  <header style="position:sticky;top:0;z-index:60;background:linear-gradient(180deg,#6ea8e0,#2c66ad);box-shadow:0 2px 0 rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.5);border-bottom:1px solid #18365c;">
+    <div style="max-width:1120px;margin:0 auto;padding:7px 14px;display:flex;align-items:center;justify-content:space-between;gap:14px;">
+      <a href="#top" style="display:flex;align-items:center;gap:9px;">
+        <span style="font-size:20px;line-height:1;filter:drop-shadow(1px 1px 0 rgba(0,0,0,0.3));">🦀</span>
+        <span style="font-family:'Press Start 2P',monospace;font-size:14px;color:#fff;letter-spacing:1px;text-shadow:1px 1px 0 #14365f;">ORPAL</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:4px;">
+        <a href="#how" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">How it works</a>
+        <a href="#skins" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Skins</a>
+        <a href="#features" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Features</a>
+        <a href="#security" style="color:#eaf2fb;font-size:12.5px;padding:6px 10px;border-radius:2px;" style-hover="background:#14365f;">Security</a>
+        <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="margin-left:8px;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:7px 14px;font-size:12.5px;font-weight:bold;color:#10151b;">Launch the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:1120px;margin:0 auto;padding:34px 16px 80px;">
+
+    <!-- ░░░░░ HERO WINDOW ░░░░░ -->
+    <section style="background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 5px 4px 8px;display:flex;align-items:center;justify-content:space-between;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">
+        <span style="display:flex;align-items:center;gap:7px;">🦀 Orpal.exe — Direct P2P Messenger</span>
+        <span style="display:flex;gap:3px;">
+          <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">_</span>
+          <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">□</span>
+          <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">✕</span>
+        </span>
+      </div>
+      <!-- menu bar -->
+      <div style="display:flex;gap:2px;padding:3px 4px;font-size:12.5px;color:#10151b;">
+        <span style="padding:3px 9px;" style-hover="background:#2c66ad;color:#fff;"><u>F</u>ile</span>
+        <span style="padding:3px 9px;" style-hover="background:#2c66ad;color:#fff;"><u>E</u>dit</span>
+        <span style="padding:3px 9px;" style-hover="background:#2c66ad;color:#fff;"><u>N</u>etwork</span>
+        <span style="padding:3px 9px;" style-hover="background:#2c66ad;color:#fff;"><u>H</u>elp</span>
+      </div>
+
+      <div style="padding:30px 30px 34px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;">
+        <!-- left: mascot + wordmark -->
+        <div style="text-align:center;">
+          <svg width="220" height="184" viewBox="0 0 220 184" style="max-width:62%;height:auto;" shape-rendering="geometricPrecision">
+            <defs>
+              <linearGradient id="crabBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7cb0e8"/><stop offset="1" stop-color="#2f6bb4"/>
+              </linearGradient>
+            </defs>
+            <!-- legs -->
+            <g stroke="#14365f" stroke-width="7" stroke-linecap="round" fill="none">
+              <path d="M82,138 Q66,150 60,170"/><path d="M92,144 Q84,158 82,176"/><path d="M74,130 Q54,140 46,158"/>
+              <path d="M138,138 Q154,150 160,170"/><path d="M128,144 Q136,158 138,176"/><path d="M146,130 Q166,140 174,158"/>
+            </g>
+            <!-- arms -->
+            <path d="M58,108 Q40,92 40,60" stroke="#14365f" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <path d="M162,108 Q180,92 180,60" stroke="#14365f" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <!-- claws (pincers) -->
+            <path d="M40,58 L58,50 A18,18 0 1 0 58,66 Z" fill="url(#crabBody)" stroke="#14365f" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M180,58 L162,50 A18,18 0 1 1 162,66 Z" fill="url(#crabBody)" stroke="#14365f" stroke-width="5" stroke-linejoin="round"/>
+            <!-- eye stalks -->
+            <path d="M93,72 L93,44" stroke="#14365f" stroke-width="6" stroke-linecap="round"/>
+            <path d="M127,72 L127,44" stroke="#14365f" stroke-width="6" stroke-linecap="round"/>
+            <!-- body -->
+            <ellipse cx="110" cy="112" rx="64" ry="42" fill="url(#crabBody)" stroke="#14365f" stroke-width="5"/>
+            <ellipse cx="110" cy="96" rx="46" ry="14" fill="rgba(255,255,255,0.28)"/>
+            <!-- cheeks -->
+            <circle cx="84" cy="120" r="6" fill="rgba(255,130,150,0.5)"/>
+            <circle cx="136" cy="120" r="6" fill="rgba(255,130,150,0.5)"/>
+            <!-- smile -->
+            <path d="M96,116 Q110,130 124,116" stroke="#14365f" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <!-- eyes -->
+            <circle cx="93" cy="40" r="12" fill="#fff" stroke="#14365f" stroke-width="4"/>
+            <circle cx="127" cy="40" r="12" fill="#fff" stroke="#14365f" stroke-width="4"/>
+            <circle cx="95" cy="42" r="5" fill="#0a1a2e"/>
+            <circle cx="129" cy="42" r="5" fill="#0a1a2e"/>
+            <circle cx="97" cy="39" r="1.8" fill="#fff"/>
+            <circle cx="131" cy="39" r="1.8" fill="#fff"/>
+          </svg>
+          <div style="font-family:'Press Start 2P',monospace;font-size:46px;color:#3a7bc8;letter-spacing:2px;margin-top:6px;text-shadow:-2px -2px 0 #9ec6f0,3px 3px 0 #14365f;">ORPAL</div>
+          <div style="font-family:'Silkscreen',monospace;font-size:11px;letter-spacing:3px;color:#2c4a73;margin-top:14px;">OPEN RELAY PROTOCOL</div>
+        </div>
+
+        <!-- right: pitch -->
+        <div>
+          <h1 style="margin:0;font-size:32px;line-height:1.12;color:#0f151c;font-weight:bold;text-wrap:balance;">Direct, private,<br>peer-to-peer messaging.</h1>
+          <p style="font-size:15px;line-height:1.55;color:#26303b;margin:14px 0 0;">Orpal opens an encrypted WebRTC channel <b>directly between two devices</b>. Messages and files travel peer-to-peer — the board just introduces you, then steps aside.</p>
+          <!-- tagline plate -->
+          <div style="margin:18px 0 0;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:11px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:22px;line-height:1;">🦀</span>
+            <span style="font-style:italic;font-weight:bold;font-size:15px;color:#14365f;">"it really cracks the crab's back"</span>
+          </div>
+          <!-- LCD strip -->
+          <div style="margin:14px 0 0;background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.18) 2px 3px),#06183a;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;padding:9px 12px;font-family:'VT323',monospace;font-size:15px;color:#5bd0ff;text-shadow:0 0 6px rgba(91,208,255,0.55);display:flex;align-items:center;gap:10px;letter-spacing:0.5px;white-space:nowrap;overflow:hidden;">
+            <span style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#5bff9a;box-shadow:0 0 7px #5bff9a;animation:orpBlink 1.4s steps(1) infinite;"></span>BOARD CONNECTED</span>
+            <span style="opacity:0.5;">|</span><span>KEYS HW-SEALED</span><span style="opacity:0.5;">|</span><span>QUEUE:2</span>
+          </div>
+          <!-- CTAs -->
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;">
+            <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:11px 20px;font-size:14px;font-weight:bold;color:#10151b;display:inline-flex;align-items:center;gap:9px;" style-active="box-shadow:inset 1px 1px #2d333b,inset -1px -1px #fff,inset 2px 2px #8a93a0,inset -2px -2px #eef2f6;">
+              <span style="border:1px dotted #10151b;padding:3px 8px;">▶ Launch the app</span>
+            </a>
+            <a href="https://github.com/open-relay-protocol/orpal" target="_blank" rel="noopener" style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:11px 20px;font-size:14px;font-weight:bold;color:#10151b;display:inline-flex;align-items:center;gap:9px;" style-active="box-shadow:inset 1px 1px #2d333b,inset -1px -1px #fff,inset 2px 2px #8a93a0,inset -2px -2px #eef2f6;">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="#10151b"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.96 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82a7.6 7.6 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.52.56.83 1.28.83 2.15 0 3.08-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ BIG APP MOCKUP ░░░░░ -->
+    <section style="margin-top:40px;position:relative;">
+      <div style="background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff,0 14px 34px rgba(0,0,0,0.32);padding:3px;">
+        <!-- titlebar -->
+        <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 5px 4px 8px;display:flex;align-items:center;justify-content:space-between;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">
+          <span style="display:flex;align-items:center;gap:7px;">🦀 ORPAL — open-relay-protocol/orpal</span>
+          <span style="display:flex;gap:3px;">
+            <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">_</span>
+            <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">□</span>
+            <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">✕</span>
+          </span>
+        </div>
+        <!-- menu -->
+        <div style="display:flex;gap:2px;padding:3px 4px;font-size:12px;color:#10151b;">
+          <span style="padding:3px 8px;" style-hover="background:#2c66ad;color:#fff;"><u>F</u>ile</span>
+          <span style="padding:3px 8px;" style-hover="background:#2c66ad;color:#fff;"><u>C</u>ontacts</span>
+          <span style="padding:3px 8px;" style-hover="background:#2c66ad;color:#fff;"><u>T</u>ransfer</span>
+          <span style="padding:3px 8px;" style-hover="background:#2c66ad;color:#fff;"><u>V</u>iew</span>
+          <span style="padding:3px 8px;" style-hover="background:#2c66ad;color:#fff;"><u>H</u>elp</span>
+        </div>
+        <!-- LCD status strip -->
+        <div style="margin:0 4px;background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.18) 2px 3px),#06183a;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;padding:8px 12px;font-family:'VT323',monospace;font-size:15px;color:#5bd0ff;text-shadow:0 0 6px rgba(91,208,255,0.55);display:flex;align-items:center;gap:8px;letter-spacing:0;overflow:hidden;white-space:nowrap;">
+          <span style="display:flex;align-items:center;gap:6px;flex-shrink:0;"><span style="width:8px;height:8px;border-radius:50%;background:#5bff9a;box-shadow:0 0 7px #5bff9a;animation:orpBlink 1.4s steps(1) infinite;"></span>BOARD&nbsp;CONNECTED</span>
+          <span style="opacity:0.5;flex-shrink:0;">▸</span><span style="flex-shrink:0;">KEYS&nbsp;HARDWARE-SEALED</span>
+          <span style="opacity:0.5;flex-shrink:0;">▸</span><span style="flex-shrink:0;color:#ffd45b;text-shadow:0 0 6px rgba(255,212,91,0.5);">QUEUE:&nbsp;2</span>
+          <!-- mini visualizer -->
+          <span style="margin-left:auto;display:flex;align-items:flex-end;gap:2px;height:18px;flex-shrink:0;">
+            <span style="width:3px;background:#5bd0ff;animation:orpEq 0.7s ease-in-out infinite;"></span>
+            <span style="width:3px;background:#5bd0ff;animation:orpEq 0.7s ease-in-out infinite 0.1s;"></span>
+            <span style="width:3px;background:#5bd0ff;animation:orpEq 0.7s ease-in-out infinite 0.25s;"></span>
+            <span style="width:3px;background:#5bd0ff;animation:orpEq 0.7s ease-in-out infinite 0.15s;"></span>
+            <span style="width:3px;background:#5bd0ff;animation:orpEq 0.7s ease-in-out infinite 0.3s;"></span>
+            <span style="width:3px;background:#5bd0ff;animation:orpEq 0.7s ease-in-out infinite 0.05s;"></span>
+          </span>
+        </div>
+        <!-- body: sidebar + chat -->
+        <div style="display:flex;gap:4px;padding:4px;align-items:stretch;">
+          <!-- sidebar contacts -->
+          <div style="width:226px;flex-shrink:0;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:5px;display:flex;flex-direction:column;">
+            <div style="background:linear-gradient(90deg,#3a72b8,#6ea0d6);color:#fff;font-weight:bold;font-size:11px;padding:4px 7px;margin-bottom:5px;">Contacts</div>
+            <div style="font-family:'Silkscreen',monospace;font-size:9px;color:#4a525e;padding:3px 5px 2px;letter-spacing:1px;">▾ ONLINE — 3</div>
+            <!-- selected -->
+            <div style="background:#2c66ad;color:#fff;padding:6px 7px;display:flex;align-items:center;gap:8px;">
+              <span style="width:26px;height:26px;background:linear-gradient(135deg,#2f6bb4,#7cb0e8);box-shadow:inset 1px 1px #cfe3fb,inset -1px -1px #14365f;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#fff;flex-shrink:0;">MR</span>
+              <span style="flex:1;min-width:0;"><span style="font-size:12.5px;font-weight:bold;display:block;">Mara Reyes</span><span style="font-family:'VT323',monospace;font-size:12px;color:#bcd6f2;">9F2A·77C4·B0E1</span></span>
+              <span style="width:7px;height:7px;border-radius:50%;background:#5bff9a;box-shadow:0 0 5px #5bff9a;"></span>
+            </div>
+            <div style="padding:6px 7px;display:flex;align-items:center;gap:8px;color:#10151b;">
+              <span style="width:26px;height:26px;background:linear-gradient(135deg,#b5701f,#e8a64a);box-shadow:inset 1px 1px #ffe0b0,inset -1px -1px #5f3a0e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#2a1604;flex-shrink:0;">JD</span>
+              <span style="flex:1;min-width:0;"><span style="font-size:12.5px;font-weight:bold;display:block;">Jun Davies</span><span style="font-family:'VT323',monospace;font-size:12px;color:#5a6470;">3C18·AA90·52FF</span></span>
+              <span style="width:7px;height:7px;border-radius:50%;background:#5bff9a;box-shadow:0 0 5px #5bff9a;"></span>
+            </div>
+            <div style="padding:6px 7px;display:flex;align-items:center;gap:8px;color:#10151b;">
+              <span style="width:26px;height:26px;background:linear-gradient(135deg,#6a3ab5,#a878e8);box-shadow:inset 1px 1px #e2cffb,inset -1px -1px #381860;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#fff;flex-shrink:0;">SL</span>
+              <span style="flex:1;min-width:0;"><span style="font-size:12.5px;font-weight:bold;display:block;">Sofia Lind</span><span style="font-family:'VT323',monospace;font-size:12px;color:#5a6470;">D74B·1E2C·9A33</span></span>
+              <span style="width:7px;height:7px;border-radius:50%;background:#5bff9a;box-shadow:0 0 5px #5bff9a;"></span>
+            </div>
+            <div style="font-family:'Silkscreen',monospace;font-size:9px;color:#4a525e;padding:8px 5px 2px;letter-spacing:1px;">▾ REQUESTS — 1</div>
+            <div style="background:#eef3fa;box-shadow:inset 1px 1px #b8c4d4,inset -1px -1px #fff;padding:6px 7px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="width:26px;height:26px;background:linear-gradient(135deg,#2d4a8a,#5b8def);box-shadow:inset 1px 1px #cfe3fb,inset -1px -1px #14365f;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#fff;flex-shrink:0;">TK</span>
+                <span style="flex:1;min-width:0;"><span style="font-size:12.5px;font-weight:bold;display:block;">Theo Kessler</span><span style="font-family:'VT323',monospace;font-size:12px;color:#2f7a3a;">binding ok</span></span>
+              </div>
+              <div style="display:flex;gap:5px;margin-top:6px;">
+                <span style="flex:1;text-align:center;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;font-size:11px;font-weight:bold;padding:4px;">Accept</span>
+                <span style="flex:1;text-align:center;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;font-size:11px;padding:4px;">Decline</span>
+              </div>
+            </div>
+            <div style="font-family:'Silkscreen',monospace;font-size:9px;color:#4a525e;padding:8px 5px 2px;letter-spacing:1px;">▾ BLOCKED — 1</div>
+            <div style="padding:6px 7px;display:flex;align-items:center;gap:8px;opacity:0.5;">
+              <span style="width:26px;height:26px;background:#9aa6b4;box-shadow:inset 1px 1px #cfd6de,inset -1px -1px #5a6470;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🚫</span>
+              <span style="flex:1;min-width:0;"><span style="font-size:12.5px;font-weight:bold;display:block;">Unknown peer</span><span style="font-family:'VT323',monospace;font-size:12px;color:#5a6470;">blocked</span></span>
+            </div>
+          </div>
+
+          <!-- chat -->
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
+            <div style="background:linear-gradient(90deg,#3a72b8,#6ea0d6);color:#fff;padding:5px 9px;display:flex;align-items:center;gap:8px;">
+              <span style="width:24px;height:24px;background:linear-gradient(135deg,#2f6bb4,#7cb0e8);box-shadow:inset 1px 1px #cfe3fb,inset -1px -1px #14365f;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:bold;">MR</span>
+              <span style="flex:1;"><b style="font-size:12.5px;">Mara Reyes</b> <span style="font-family:'VT323',monospace;font-size:13px;opacity:0.85;">· verified · connected</span></span>
+              <span style="font-size:12px;">🔒</span>
+            </div>
+            <!-- messages -->
+            <div style="flex:1;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:10px;display:flex;flex-direction:column;gap:9px;font-size:13px;line-height:1.45;overflow:hidden;">
+              <div style="text-align:left;font-family:'VT323',monospace;font-size:15px;color:#7a8694;">— P2P channel established —</div>
+              <div><b style="color:#2c66ad;">mara_reyes:</b> Sending over the signed build now.</div>
+              <!-- transfer -->
+              <div style="background:linear-gradient(#d6dde4,#c4cdd6);box-shadow:inset -1px -1px #8a93a0,inset 1px 1px #fff;padding:8px 9px;max-width:330px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:12px;"><b style="white-space:nowrap;">📁 orpal-core.tar.gz</b><span style="font-family:'VT323',monospace;font-size:13px;color:#4a525e;">4.2&nbsp;MB</span></div>
+                <div style="display:flex;gap:2px;margin:7px 0 5px;background:#fff;box-shadow:inset 1px 1px #4a525e,inset -1px -1px #fff;padding:2px;height:16px;">
+                  <span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span><span style="flex:1;background:#2c66ad;box-shadow:inset 1px 0 #6ea8e0;"></span>
+                </div>
+                <div style="font-family:'VT323',monospace;font-size:13px;color:#1f7a3a;">✓ 64/64 chunks · SHA-256: OK</div>
+              </div>
+              <div><b style="color:#1f7a3a;">you:</b> Got it — decrypting now. <span style="font-family:'VT323',monospace;font-size:15px;color:#1f7a3a;">✓✓ acknowledged</span></div>
+              <div style="color:#5a6470;"><b>you:</b> Pinging you when you're back. <span style="font-family:'VT323',monospace;font-size:15px;">⏲ queued · offline</span></div>
+            </div>
+            <!-- composer -->
+            <div style="display:flex;gap:4px;margin-top:4px;">
+              <div style="flex:1;background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:7px 9px;font-size:12.5px;color:#7a8694;">Encrypted message…</div>
+              <span style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:7px 18px;font-size:12.5px;font-weight:bold;display:flex;align-items:center;">Send ▸</span>
+            </div>
+          </div>
+        </div>
+        <!-- status bar -->
+        <div style="display:flex;gap:3px;padding:2px 4px 4px;font-size:11px;color:#26303b;">
+          <span style="box-shadow:inset 1px 1px #6a7380,inset -1px -1px #fff;padding:3px 8px;display:flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#1f9a4a;"></span>Connected</span>
+          <span style="box-shadow:inset 1px 1px #6a7380,inset -1px -1px #fff;padding:3px 8px;">P2P · E2EE</span>
+          <span style="flex:1;box-shadow:inset 1px 1px #6a7380,inset -1px -1px #fff;padding:3px 8px;font-family:'VT323',monospace;font-size:13px;">open-relay-protocol.github.io/orpal</span>
+        </div>
+      </div>
+
+      <!-- MY IDENTITY window (overlapping) -->
+      <div style="position:absolute;right:-6px;bottom:-40px;width:268px;transform:rotate(1.4deg);background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff,0 18px 36px rgba(0,0,0,0.4);padding:3px;z-index:5;">
+        <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:11.5px;padding:4px 5px 4px 8px;display:flex;align-items:center;justify-content:space-between;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">
+          <span>My Identity</span>
+          <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">✕</span>
+        </div>
+        <div style="padding:12px;">
+          <div style="background:#fff;box-shadow:inset -1px -1px #fff,inset 1px 1px #4a525e,inset -2px -2px #dde3ea,inset 2px 2px #2b3b50;padding:12px;">
+            <div style="width:100%;aspect-ratio:1;">{{ qr }}</div>
+          </div>
+          <div style="text-align:center;font-weight:bold;font-size:15px;margin-top:10px;">Mara Reyes</div>
+          <div style="margin-top:7px;background:#06183a;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;padding:5px 8px;text-align:center;font-family:'VT323',monospace;font-size:14px;color:#5bd0ff;letter-spacing:1px;">ORP:9F2A·77C4·B0E1·4D6A</div>
+          <div style="text-align:center;margin-top:8px;font-family:'VT323',monospace;font-size:14px;color:#1f7a3a;">✓ BINDING VALIDATED</div>
+          <div style="display:flex;gap:5px;margin-top:11px;">
+            <span style="flex:1;text-align:center;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;font-size:11px;font-weight:bold;padding:6px 2px;">Share</span>
+            <span style="flex:1;text-align:center;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;font-size:11px;font-weight:bold;padding:6px 2px;">Scan</span>
+            <span style="flex:1.4;text-align:center;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;font-size:11px;font-weight:bold;padding:6px 2px;">Copy card</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ BLIND BOARD ░░░░░ -->
+    <section id="how" style="margin-top:78px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">📡 How it works — the blind board</div>
+      <div style="padding:26px 24px 28px;">
+        <h2 style="margin:0 0 6px;font-size:24px;text-align:center;">A relay that introduces you — then steps aside.</h2>
+        <p style="margin:0 auto 24px;max-width:620px;text-align:center;font-size:14px;color:#26303b;line-height:1.55;">The board's only job is to help two devices find each other. The moment they connect, traffic flows directly between them — it <b>can't read anything and stores nothing.</b></p>
+        <!-- diagram -->
+        <div style="background:#dfe4ea;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:24px 18px;">
+          <div style="font-family:'VT323',monospace;text-align:center;color:#2c66ad;font-size:15px;letter-spacing:1px;margin-bottom:14px;">DIRECT ENCRYPTED CHANNEL · WEBRTC · E2EE</div>
+          <div style="display:flex;align-items:center;gap:14px;justify-content:center;">
+            <!-- peer A -->
+            <div style="text-align:center;width:130px;">
+              <div style="margin:0 auto 8px;width:62px;height:56px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;">
+                <div style="width:40px;height:30px;background:#06183a;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;display:flex;align-items:center;justify-content:center;font-size:11px;">🦀</div>
+              </div>
+              <b style="font-size:13px;">Your phone</b>
+              <div style="font-family:'VT323',monospace;font-size:13px;color:#5a6470;">peer A</div>
+            </div>
+            <!-- line -->
+            <div style="flex:1;max-width:240px;height:56px;position:relative;display:flex;align-items:center;">
+              <div style="position:absolute;left:0;right:0;top:50%;height:4px;background:repeating-linear-gradient(90deg,#2c66ad 0 8px,#6ea8e0 8px 14px);box-shadow:0 0 8px rgba(44,102,173,0.5);"></div>
+              <div style="position:relative;margin:0 auto;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:4px 10px;font-size:11px;font-weight:bold;">🔒 E2EE</div>
+            </div>
+            <!-- peer B -->
+            <div style="text-align:center;width:130px;">
+              <div style="margin:0 auto 8px;width:62px;height:56px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;">
+                <div style="width:40px;height:30px;background:#06183a;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;display:flex;align-items:center;justify-content:center;font-size:11px;">🦀</div>
+              </div>
+              <b style="font-size:13px;">Their phone</b>
+              <div style="font-family:'VT323',monospace;font-size:13px;color:#5a6470;">peer B</div>
+            </div>
+          </div>
+          <div style="text-align:center;font-family:'VT323',monospace;font-size:14px;color:#7a8694;margin:14px 0 8px;">▏ signaling / rendezvous only ▏</div>
+          <!-- board -->
+          <div style="max-width:520px;margin:0 auto;background:#cfd6de;box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:14px 16px;">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:11px;">
+              <div style="width:42px;height:42px;background:#06183a;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;display:flex;align-items:center;justify-content:center;position:relative;">
+                <span style="font-size:16px;filter:grayscale(0.3);">🖥️</span>
+                <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#ff5a5a;font-size:30px;font-weight:bold;line-height:1;">⃠</span>
+              </div>
+              <div><b style="font-size:14px;">The blind board</b><div style="font-family:'VT323',monospace;font-size:13px;color:#5a6470;">untrusted · stateless · stores nothing</div></div>
+            </div>
+            <div style="font-family:'Silkscreen',monospace;font-size:9px;color:#4a525e;letter-spacing:1px;margin-bottom:8px;">THE BOARD NEVER SEES</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span style="background:#fff;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:5px 9px;font-size:12px;display:flex;align-items:center;gap:6px;"><span style="color:#cf2a2a;font-weight:bold;">✕</span>Private keys</span>
+              <span style="background:#fff;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:5px 9px;font-size:12px;display:flex;align-items:center;gap:6px;"><span style="color:#cf2a2a;font-weight:bold;">✕</span>Message plaintext</span>
+              <span style="background:#fff;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:5px 9px;font-size:12px;display:flex;align-items:center;gap:6px;"><span style="color:#cf2a2a;font-weight:bold;">✕</span>Connection data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ SKINS FEATURE ░░░░░ -->
+    <section id="skins" style="margin-top:34px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">🎨 Appearance — pick your skin</div>
+      <div style="padding:24px;">
+        <h2 style="margin:0 0 6px;font-size:24px;">Six skins. Same untrusted board underneath.</h2>
+        <p style="margin:0 0 22px;font-size:14px;color:#26303b;max-width:640px;line-height:1.55;">Orpal ships with a wardrobe of classic skins. Steel Blue is the default — swap to amber CRT, phosphor green, synthwave magenta and more. Every skin is the exact same secure core.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+          <!-- Steel Blue (current) -->
+          <div>
+            <div style="background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:2px;">
+              <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-size:9px;font-weight:bold;padding:3px 5px;display:flex;justify-content:space-between;">ORPAL<span>✕</span></div>
+              <div style="background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.18) 2px 3px),#06183a;color:#5bd0ff;font-family:'VT323',monospace;font-size:13px;padding:5px 7px;margin:3px;text-shadow:0 0 5px rgba(91,208,255,0.5);">BOARD CONNECTED</div>
+              <div style="display:flex;gap:3px;padding:0 3px 4px;"><span style="flex:1;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff;height:11px;"></span><span style="flex:1;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff;height:11px;"></span></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:7px;"><b style="font-size:12px;">Steel Blue</b><span style="font-family:'VT323',monospace;font-size:13px;color:#1f7a3a;">● current</span></div>
+          </div>
+
+          <!-- Amber CRT -->
+          <div>
+            <div style="background:linear-gradient(#3a3024,#2a2018);box-shadow:inset -1px -1px #110c06,inset 1px 1px #6a5836,inset -2px -2px #1f1810,inset 2px 2px #5a4a30;padding:2px;">
+              <div style="background:linear-gradient(90deg,#7a5a1e,#c8962e);color:#1a1206;font-size:9px;font-weight:bold;padding:3px 5px;display:flex;justify-content:space-between;">ORPAL<span>✕</span></div>
+              <div style="background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.25) 2px 3px),#160f04;color:#ffb000;font-family:'VT323',monospace;font-size:13px;padding:5px 7px;margin:3px;text-shadow:0 0 6px rgba(255,176,0,0.6);">BOARD CONNECTED</div>
+              <div style="display:flex;gap:3px;padding:0 3px 4px;"><span style="flex:1;background:linear-gradient(#5a4a30,#3a2e1c);box-shadow:inset -1px -1px #110c06,inset 1px 1px #6a5836;height:11px;"></span><span style="flex:1;background:linear-gradient(#5a4a30,#3a2e1c);box-shadow:inset -1px -1px #110c06,inset 1px 1px #6a5836;height:11px;"></span></div>
+            </div>
+            <div style="margin-top:7px;"><b style="font-size:12px;">Amber CRT</b></div>
+          </div>
+
+          <!-- Night -->
+          <div>
+            <div style="background:linear-gradient(#363b47,#272b34);box-shadow:inset -1px -1px #0a0c10,inset 1px 1px #5a6272,inset -2px -2px #181c24,inset 2px 2px #4a5160;padding:2px;">
+              <div style="background:linear-gradient(90deg,#3a4252,#5a6680);color:#dbe2ee;font-size:9px;font-weight:bold;padding:3px 5px;display:flex;justify-content:space-between;">ORPAL<span>✕</span></div>
+              <div style="background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.2) 2px 3px),#06080f;color:#7aa2ff;font-family:'VT323',monospace;font-size:13px;padding:5px 7px;margin:3px;text-shadow:0 0 5px rgba(122,162,255,0.5);">BOARD CONNECTED</div>
+              <div style="display:flex;gap:3px;padding:0 3px 4px;"><span style="flex:1;background:linear-gradient(#4a5160,#363b47);box-shadow:inset -1px -1px #0a0c10,inset 1px 1px #5a6272;height:11px;"></span><span style="flex:1;background:linear-gradient(#4a5160,#363b47);box-shadow:inset -1px -1px #0a0c10,inset 1px 1px #5a6272;height:11px;"></span></div>
+            </div>
+            <div style="margin-top:7px;"><b style="font-size:12px;">Night</b></div>
+          </div>
+
+          <!-- Green Phosphor -->
+          <div>
+            <div style="background:linear-gradient(#1a1f1a,#0e120e);box-shadow:inset -1px -1px #050705,inset 1px 1px #2e3a2e,inset -2px -2px #0a0e0a,inset 2px 2px #243024;padding:2px;">
+              <div style="background:linear-gradient(90deg,#0e3a18,#1d6e30);color:#bdffcf;font-size:9px;font-weight:bold;padding:3px 5px;display:flex;justify-content:space-between;">ORPAL<span>✕</span></div>
+              <div style="background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.25) 2px 3px),#03100a;color:#33ff66;font-family:'VT323',monospace;font-size:13px;padding:5px 7px;margin:3px;text-shadow:0 0 6px rgba(51,255,102,0.6);">BOARD CONNECTED</div>
+              <div style="display:flex;gap:3px;padding:0 3px 4px;"><span style="flex:1;background:linear-gradient(#243024,#161c16);box-shadow:inset -1px -1px #050705,inset 1px 1px #2e3a2e;height:11px;"></span><span style="flex:1;background:linear-gradient(#243024,#161c16);box-shadow:inset -1px -1px #050705,inset 1px 1px #2e3a2e;height:11px;"></span></div>
+            </div>
+            <div style="margin-top:7px;"><b style="font-size:12px;">Green Phosphor</b></div>
+          </div>
+
+          <!-- Magenta Synthwave -->
+          <div>
+            <div style="background:linear-gradient(#2a1638,#1c0e26);box-shadow:inset -1px -1px #0a0410,inset 1px 1px #5a2e6e,inset -2px -2px #160a1e,inset 2px 2px #44225a;padding:2px;">
+              <div style="background:linear-gradient(90deg,#7a2ce0,#ff4fd8);color:#fff;font-size:9px;font-weight:bold;padding:3px 5px;display:flex;justify-content:space-between;">ORPAL<span>✕</span></div>
+              <div style="background:repeating-linear-gradient(rgba(0,0,0,0) 0 2px,rgba(0,0,0,0.25) 2px 3px),#180626;color:#ff5cf0;font-family:'VT323',monospace;font-size:13px;padding:5px 7px;margin:3px;text-shadow:0 0 7px rgba(255,92,240,0.6);">BOARD CONNECTED</div>
+              <div style="display:flex;gap:3px;padding:0 3px 4px;"><span style="flex:1;background:linear-gradient(#44225a,#2a1638);box-shadow:inset -1px -1px #0a0410,inset 1px 1px #5a2e6e;height:11px;"></span><span style="flex:1;background:linear-gradient(#44225a,#2a1638);box-shadow:inset -1px -1px #0a0410,inset 1px 1px #5a2e6e;height:11px;"></span></div>
+            </div>
+            <div style="margin-top:7px;"><b style="font-size:12px;">Magenta Synthwave</b></div>
+          </div>
+
+          <!-- Classic Grey -->
+          <div>
+            <div style="background:#c0c0c0;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px #808080,inset 2px 2px #dfdfdf;padding:2px;">
+              <div style="background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-size:9px;font-weight:bold;padding:3px 5px;display:flex;justify-content:space-between;">ORPAL<span>✕</span></div>
+              <div style="background:#000;color:#33ff33;font-family:'VT323',monospace;font-size:13px;padding:5px 7px;margin:3px;box-shadow:inset 1px 1px #000;">BOARD CONNECTED</div>
+              <div style="display:flex;gap:3px;padding:0 3px 4px;"><span style="flex:1;background:#c0c0c0;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff;height:11px;"></span><span style="flex:1;background:#c0c0c0;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff;height:11px;"></span></div>
+            </div>
+            <div style="margin-top:7px;"><b style="font-size:12px;">Classic Grey</b></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ FEATURES ░░░░░ -->
+    <section id="features" style="margin-top:34px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">⚙ Features — everything in the core</div>
+      <div style="padding:24px;">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+          <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+            <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">⚡</div>
+            <b style="font-size:15px;">Direct P2P transport</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">Messages and files ride a WebRTC datachannel opened directly between two devices — no message server in between.</p>
+          </div>
+          <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+            <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">📡</div>
+            <b style="font-size:15px;">Blind rendezvous</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">A relay board only helps two peers find each other. It can't read traffic and stores nothing once you're connected.</p>
+          </div>
+          <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+            <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">▦</div>
+            <b style="font-size:15px;">Identity via QR</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">Add contacts by scanning a QR identity card, with anti-substitution binding validation on every scan. Requests &amp; blocking built in.</p>
+          </div>
+          <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+            <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">🛡</div>
+            <b style="font-size:15px;">Recipient-sealed messages</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">Every payload is sealed to your contact's verified key — readable by them, and by no one else.</p>
+          </div>
+          <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+            <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">📦</div>
+            <b style="font-size:15px;">Chunked file transfer</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">Large files stream in verified chunks, each checked with SHA-256, so what lands is exactly what was sent.</p>
+          </div>
+          <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+            <div style="width:40px;height:40px;background:linear-gradient(#cfd6de,#bcc5cf);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;">💾</div>
+            <b style="font-size:15px;">Encrypted backup &amp; restore</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">A full device backup, encrypted end to end. Restore your identity and history on a new device with confidence.</p>
+          </div>
+        </div>
+
+        <!-- delivery lifecycle strip -->
+        <div style="margin-top:16px;background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;">
+          <b style="font-size:15px;">Reliable delivery — with an offline send queue</b>
+          <p style="margin:6px 0 12px;font-size:13px;color:#36404b;line-height:1.5;">Peer-to-peer doesn't mean fragile. Compose anytime; messages wait safely on your device and send the instant a peer reconnects.</p>
+          <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-family:'VT323',monospace;font-size:15px;">
+            <span style="background:#fff;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:4px 11px;">queued</span>
+            <span style="color:#5a6470;">▸</span>
+            <span style="background:#fff;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:4px 11px;">sending</span>
+            <span style="color:#5a6470;">▸</span>
+            <span style="background:#fff;box-shadow:inset 1px 1px #8a93a0,inset -1px -1px #fff;padding:4px 11px;">delivered</span>
+            <span style="color:#2c66ad;">▸</span>
+            <span style="background:#06183a;color:#5bd0ff;box-shadow:inset 2px 2px #021029,inset -2px -2px #14315e;padding:4px 11px;text-shadow:0 0 6px rgba(91,208,255,0.5);">✓✓ acknowledged</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ SECURITY ░░░░░ -->
+    <section id="security" style="margin-top:34px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">🔐 Security — Properties</div>
+      <div style="padding:24px;">
+        <h2 style="margin:0 0 18px;font-size:24px;">Designed to be trusted with the relay assumed hostile.</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+          <!-- groupbox -->
+          <div style="border:1px solid #8a93a0;box-shadow:inset 1px 1px #fff,1px 1px #fff;padding:16px 14px 14px;position:relative;margin-top:8px;">
+            <span style="position:absolute;top:-9px;left:10px;background:#c8d0d8;padding:0 6px;font-weight:bold;font-size:12px;">Hardware keys</span>
+            <div style="font-size:26px;margin-bottom:8px;">🔑</div>
+            <b style="font-size:14px;">Keys in secure hardware</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">When the device supports it, private keys are sealed to secure hardware — Secure Enclave, Android Keystore, or TPM via WebAuthn — and never leave it.</p>
+          </div>
+          <div style="border:1px solid #8a93a0;box-shadow:inset 1px 1px #fff,1px 1px #fff;padding:16px 14px 14px;position:relative;margin-top:8px;">
+            <span style="position:absolute;top:-9px;left:10px;background:#c8d0d8;padding:0 6px;font-weight:bold;font-size:12px;">Untrusted board</span>
+            <div style="font-size:26px;margin-bottom:8px;">🚫</div>
+            <b style="font-size:14px;">The board is untrusted</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">Orpal assumes the relay is fully hostile. Even a compromised board learns nothing — no keys, no plaintext, no usable connection data.</p>
+          </div>
+          <div style="border:1px solid #8a93a0;box-shadow:inset 1px 1px #fff,1px 1px #fff;padding:16px 14px 14px;position:relative;margin-top:8px;">
+            <span style="position:absolute;top:-9px;left:10px;background:#c8d0d8;padding:0 6px;font-weight:bold;font-size:12px;">Open source</span>
+            <div style="font-size:26px;margin-bottom:8px;">📖</div>
+            <b style="font-size:14px;">Apache-2.0, fully auditable</b>
+            <p style="margin:6px 0 0;font-size:13px;color:#36404b;line-height:1.5;">Every line is open. The full client and the Open Relay Protocol are released under Apache-2.0 — read it, fork it, run your own board.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ PLATFORMS ░░░░░ -->
+    <section style="margin-top:34px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 8px;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">💿 Setup — choose your install</div>
+      <div style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <span style="width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:inset 1px 1px #4a525e,inset -1px -1px #fff;display:flex;align-items:center;justify-content:center;"><span style="width:6px;height:6px;border-radius:50%;background:#2c66ad;"></span></span>
+            <b style="font-size:16px;">Installable PWA</b>
+            <span style="margin-left:auto;font-family:'VT323',monospace;font-size:13px;color:#5a6470;">desktop + android</span>
+          </div>
+          <p style="margin:0 0 14px;font-size:13px;color:#36404b;line-height:1.5;">Open it in any modern Chromium browser and install to your home screen or desktop. No store, no waiting.</p>
+          <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="align-self:flex-start;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:9px 16px;font-size:13px;font-weight:bold;color:#10151b;">▶ Launch at orpal</a>
+        </div>
+        <div style="background:#dfe4ea;box-shadow:inset 1px 1px #fff,inset -1px -1px #8a93a0;padding:18px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <span style="width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:inset 1px 1px #4a525e,inset -1px -1px #fff;"></span>
+            <b style="font-size:16px;">Native Android APK</b>
+            <span style="margin-left:auto;font-family:'VT323',monospace;font-size:13px;color:#5a6470;">via capacitor</span>
+          </div>
+          <p style="margin:0 0 14px;font-size:13px;color:#36404b;line-height:1.5;">Prefer a native build? Install the signed APK, packaged with Capacitor from the exact same shared core.</p>
+          <a href="https://github.com/open-relay-protocol/orpal" target="_blank" rel="noopener" style="align-self:flex-start;background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:9px 16px;font-size:13px;font-weight:bold;color:#10151b;">⬇ Download the APK</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ FINAL CTA (message box) ░░░░░ -->
+    <section style="margin-top:40px;display:flex;justify-content:center;">
+      <div style="width:min(560px,100%);background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff,0 16px 36px rgba(0,0,0,0.34);padding:3px;">
+        <div style="background:linear-gradient(90deg,#2c66ad,#74ade2);color:#fff;font-weight:bold;font-size:12px;padding:4px 5px 4px 8px;display:flex;align-items:center;justify-content:space-between;text-shadow:1px 1px 0 rgba(0,0,0,0.35);">
+          <span>Orpal</span>
+          <span style="width:18px;height:15px;background:linear-gradient(#d4dbe3,#bcc5cf);box-shadow:inset -1px -1px #3d444e,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1a1f26;font-weight:bold;">✕</span>
+        </div>
+        <div style="padding:24px;display:flex;gap:18px;align-items:center;">
+          <div style="font-size:46px;flex-shrink:0;">🦀</div>
+          <div style="flex:1;">
+            <h2 style="margin:0;font-size:22px;">Ready to crack the crab's back?</h2>
+            <p style="margin:8px 0 0;font-size:14px;color:#26303b;line-height:1.5;">No accounts to create, nothing to trust but the math. Open Orpal and scan your first contact.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:flex-end;padding:0 24px 22px;">
+          <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:10px 20px;font-size:14px;font-weight:bold;color:#10151b;"><span style="border:1px dotted #10151b;padding:2px 8px;">▶ Launch the app</span></a>
+          <a href="https://github.com/open-relay-protocol/orpal" target="_blank" rel="noopener" style="background:linear-gradient(#d6dde4,#bdc6d0);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #fff,inset -2px -2px #8a93a0,inset 2px 2px #eef2f6;padding:10px 20px;font-size:14px;font-weight:bold;color:#10151b;">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░░░░ FOOTER LOCKUP ░░░░░ -->
+    <footer style="margin-top:40px;background:linear-gradient(#cfd6de,#c2cbd4);box-shadow:inset -1px -1px #2d333b,inset 1px 1px #eef2f6,inset -2px -2px #8a93a0,inset 2px 2px #fff;padding:3px;">
+      <div style="padding:30px 24px;">
+        <div style="text-align:center;margin-bottom:24px;">
+          <div style="font-size:34px;line-height:1;">🦀</div>
+          <div style="font-family:'Press Start 2P',monospace;font-size:13px;color:#2c4a73;letter-spacing:2px;margin-top:12px;text-shadow:1px 1px 0 #fff;">OPEN&nbsp;RELAY&nbsp;PROTOCOL</div>
+          <div style="font-family:'Silkscreen',monospace;font-size:10px;color:#5a6470;letter-spacing:1px;margin-top:8px;">it really cracks the crab's back</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;border-top:1px solid #8a93a0;box-shadow:0 -1px 0 #fff;padding-top:18px;">
+          <a href="https://open-relay-protocol.github.io/orpal/" target="_blank" rel="noopener" style="font-size:13px;color:#1a3a66;font-weight:bold;" style-hover="text-decoration:underline;">Launch the app</a>
+          <a href="https://github.com/open-relay-protocol/orpal" target="_blank" rel="noopener" style="font-size:13px;color:#1a3a66;font-weight:bold;" style-hover="text-decoration:underline;">GitHub repo</a>
+            <a href="https://board.orpal.app" target="_blank" rel="noopener" style="font-size:13px;color:#1a3a66;font-weight:bold;" style-hover="text-decoration:underline;">Community board</a>
+          <a href="https://github.com/open-relay-protocol" target="_blank" rel="noopener" style="font-size:13px;color:#1a3a66;font-weight:bold;" style-hover="text-decoration:underline;">Open Relay Protocol</a>
+          <a href="https://github.com/open-relay-protocol/orpal" target="_blank" rel="noopener" style="font-size:13px;color:#1a3a66;font-weight:bold;" style-hover="text-decoration:underline;">Apache-2.0 license</a>
+        </div>
+        <div style="text-align:center;margin-top:18px;font-family:'VT323',monospace;font-size:14px;color:#5a6470;">© 2026 Orpal · no servers · no logs · the board stores nothing</div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { qr: this.buildQR(25) };
+  }
+  buildQR(n) {
+    let seed = 0x9e3779b9 >>> 0;
+    const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+    const finders = [[0, 0], [0, n - 7], [n - 7, 0]];
+    const inFinder = (r, c) => finders.some(([br, bc]) => r >= br && r <= br + 6 && c >= bc && c <= bc + 6);
+    const finderOn = (r, c) => {
+      for (const [br, bc] of finders) {
+        if (r >= br && r <= br + 6 && c >= bc && c <= bc + 6) {
+          const rr = r - br, cc = c - bc;
+          const ring = rr === 0 || rr === 6 || cc === 0 || cc === 6;
+          const core = rr >= 2 && rr <= 4 && cc >= 2 && cc <= 4;
+          return ring || core;
+        }
+      }
+      return false;
+    };
+    const cells = [];
+    for (let r = 0; r < n; r++) {
+      for (let c = 0; c < n; c++) {
+        const on = inFinder(r, c) ? finderOn(r, c) : rnd() > 0.52;
+        cells.push(React.createElement('div', {
+          key: r + '-' + c,
+          style: { background: on ? '#0a1a2e' : 'transparent' }
+        }));
+      }
+    }
+    return React.createElement('div', {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(' + n + ', 1fr)',
+        gridTemplateRows: 'repeat(' + n + ', 1fr)',
+        width: '100%', height: '100%'
+      }
+    }, cells);
+  }
+}
+</script>
+</body>
+</html>
